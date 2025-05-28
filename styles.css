@@ -17,6 +17,7 @@ body {
     padding: 0.5rem;
     overflow: hidden;
     white-space: nowrap;
+    text-align: center;
 }
 
 .ticker-content {
@@ -25,8 +26,12 @@ body {
 }
 
 .ticker-content span {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-right: 2rem;
+}
+
+.ticker-content:hover {
+    animation-play-state: paused;
 }
 
 @keyframes ticker {
@@ -50,6 +55,15 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: #FDF8F2; /* Ivory */
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #FDF8F2; /* Ivory */
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .nav-links {
@@ -87,6 +101,7 @@ body {
     left: 0;
     list-style: none;
     min-width: 150px;
+    z-index: 1000;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -101,6 +116,10 @@ body {
 
 .dropdown-menu a:hover {
     color: #D4AF37; /* Gold */
+}
+
+.nav-links.active {
+    display: flex;
 }
 
 .cart {
@@ -157,6 +176,8 @@ body {
     border-radius: 50px;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -177,6 +198,7 @@ body {
     font-size: 1rem;
     background-color: #FDF8F2; /* Ivory */
     color: #000000; /* Black */
+    width: 200px;
 }
 
 .newsletter-button {
@@ -188,6 +210,7 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    min-width: 120px;
 }
 
 .newsletter-button:hover {
@@ -212,6 +235,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .category-buttons button {
@@ -223,6 +247,7 @@ body {
     cursor: pointer;
     color: #000000; /* Black */
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 100px;
 }
 
 .category-buttons button.active,
@@ -295,6 +320,7 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    min-width: 120px;
 }
 
 .add-to-cart:hover {
@@ -415,40 +441,214 @@ footer {
     to { opacity: 1; }
 }
 
+/* Mobile View */
 @media (max-width: 768px) {
     .news-ticker {
+        padding: 0.3rem;
+    }
+
+    .ticker-content span {
         font-size: 0.8rem;
     }
 
     .navbar {
-        flex-direction: column;
-        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .nav-links {
+        display: none;
         flex-direction: column;
-        text-align: center;
+        width: 100%;
+        background: #4B0E28; /* Deep Plum */
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background-color: #F7E7CE; /* Champagne */
+        border: none;
+        padding: 0.5rem;
+    }
+
+    .cart {
+        font-size: 1rem;
+    }
+
+    .hero {
+        height: 50vh;
+        padding: 1rem;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 
     .cta-container {
         flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 120px;
     }
 
     .newsletter {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        flex-direction: column;
     }
 
     .newsletter input {
-        width: 70%;
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .newsletter-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    .categories {
+        padding: 2rem 1rem;
+    }
+
+    .categories h2 {
+        font-size: 2rem;
+    }
+
+    .category-buttons {
+        gap: 0.5rem;
+    }
+
+    .category-buttons button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 80px;
+    }
+
+    .products {
+        padding: 2rem 1rem;
+    }
+
+    .products h2 {
+        font-size: 2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .product-card img {
+        max-width: 200px;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+    }
+
+    .add-to-cart {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .blog {
+        padding: 2rem 1rem;
+    }
+
+    .blog h2 {
+        font-size: 2rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .blog-card img {
+        height: 150px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .blog-card p {
+        font-size: 0.9rem;
+    }
+
+    .blog-link {
+        font-size: 0.9rem;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
+        padding: 2rem 1rem;
     }
+
+    .footer-section {
+        margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .product-card img {
+        max-width: 180px;
+    }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
