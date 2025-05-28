@@ -41,7 +41,7 @@ body {
 
 .navbar {
     background: linear-gradient(to right, #4B0E28, #D4AF37); /* Deep Plum to Gold */
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -116,10 +116,6 @@ body {
 
 .dropdown-menu a:hover {
     color: #D4AF37; /* Gold */
-}
-
-.nav-links.active {
-    display: flex;
 }
 
 .cart {
@@ -294,8 +290,10 @@ body {
 .product-card img {
     width: 100%;
     max-width: 250px;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .product-card h3 {
@@ -368,6 +366,7 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .blog-card h3 {
@@ -444,16 +443,16 @@ footer {
 /* Mobile View */
 @media (max-width: 768px) {
     .news-ticker {
-        padding: 0.3rem;
+        padding: 0.5rem;
     }
 
     .ticker-content span {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .navbar {
         flex-wrap: wrap;
-        padding: 1rem;
+        padding: 0.8rem 1.5rem;
     }
 
     .hamburger {
@@ -461,11 +460,11 @@ footer {
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Hidden by default */
         flex-direction: column;
         width: 100%;
         background: #4B0E28; /* Deep Plum */
-        padding: 1rem;
+        padding: 1.5rem;
         position: absolute;
         top: 100%;
         left: 0;
@@ -478,86 +477,95 @@ footer {
     }
 
     .nav-links li {
-        margin: 0.5rem 0;
+        margin: 0.8rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
     }
 
     .dropdown-menu {
         position: static;
         background-color: #F7E7CE; /* Champagne */
         border: none;
-        padding: 0.5rem;
+        padding: 0.8rem;
     }
 
     .cart {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .hero {
         height: 50vh;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .cta-container {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.8rem;
     }
 
     .cta-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        min-width: 120px;
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+        min-width: 160px;
     }
 
     .newsletter {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
         flex-direction: column;
+        gap: 0.8rem;
     }
 
     .newsletter input {
         width: 100%;
-        padding: 0.6rem;
-        font-size: 0.9rem;
+        padding: 0.8rem;
+        font-size: 1rem;
     }
 
     .newsletter-button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        min-width: 100px;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        min-width: 160px;
     }
 
     .categories {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
     }
 
     .categories h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .category-buttons {
-        gap: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
 
     .category-buttons button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        min-width: 80px;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        min-width: 120px;
     }
 
     .products {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
     }
 
     .products h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .product-grid {
@@ -565,29 +573,39 @@ footer {
         gap: 1.5rem;
     }
 
+    .product-card {
+        padding: 1.5rem;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
     .product-card img {
-        max-width: 200px;
+        max-width: 100%;
+        height: 300px;
+        object-fit: cover;
     }
 
     .product-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .product-card p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .add-to-cart {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        min-width: 160px;
     }
 
     .blog {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
     }
 
     .blog h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .blog-grid {
@@ -595,56 +613,73 @@ footer {
         gap: 1.5rem;
     }
 
+    .blog-card {
+        padding: 1.5rem;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
     .blog-card img {
-        height: 150px;
+        height: 200px;
+        object-fit: cover;
     }
 
     .blog-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .blog-card p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .blog-link {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1.5rem;
+        gap: 1.5rem;
     }
 
     .footer-section {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.4rem;
     }
 
     .social-icons a {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .footer-bottom {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        padding-top: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        font-size: 1.5rem;
-    }
-
-    .hero-content h1 {
         font-size: 1.8rem;
     }
 
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
     .hero-content p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .product-card img {
-        max-width: 180px;
+        height: 250px;
+    }
+
+    .blog-card img {
+        height: 180px;
     }
 }
 
