@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="news-ticker">
+        <div class="ticker-content">
+            <span>Free Shipping on Orders Over £50! | New Autumn Collection Now Available | Subscribe for 10% Off Your First Purchase</span>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">Luxe Beauty</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#shop"><i class="fas fa-store"></i> Shop</a></li>
+                <li class="dropdown">
+                    <a href="#categories"><i class="fas fa-tags"></i> Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-category="all">All Products</a></li>
+                        <li><a href="#" data-category="lips">Lips</a></li>
+                        <li><a href="#" data-category="face">Face</a></li>
+                        <li><a href="#" data-category="eyes">Eyes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Beauty</h1>
+            <p>Discover Luxe Beauty’s premium cosmetics. All prices include 20% VAT.</p>
+            <div class="cta-container">
+                <a href="#shop" class="cta-button">Explore Now</a>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                    <button class="newsletter-button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-buttons">
+            <button data-category="all" class="active">All</button>
+            <button data-category="lips">Lips</button>
+            <button data-category="face">Face</button>
+            <button data-category="eyes">Eyes</button>
+        </div>
+    </section>
+
+    <section id="shop" class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card" data-category="lips">
+                <img src="lipstick.jpg" alt="Matte Lipstick">
+                <h3>Matte Lipstick</h3>
+                <p>Bold, long-wear color. £18.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Matte Lipstick">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="lips">
+                <img src="top-view-lipgloss-arrangement.jpg" alt="Glossy Lip Shine">
+                <h3>Glossy Lip Shine</h3>
+                <p>High-shine, non-sticky. £16.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Glossy Lip Shine">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="face">
+                <img src="flat-lay-foundation-containers-arrangement.jpg" alt="Flawless Foundation">
+                <h3>Flawless Foundation</h3>
+                <p>Full coverage, lightweight. £28.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Flawless Foundation">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="face">
+                <img src="radiant preimer.png" alt="Radiant Primer">
+                <h3>Radiant Primer</h3>
+                <p>Hydrating base. £22.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Radiant Primer">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="eyes">
+                <img src="scentll-co-YM6BJFFWLeI-unsplash.jpg" alt="Smokey Eyeshadow">
+                <h3>Smokey Eyeshadow</h3>
+                <p>Rich, blendable palette. £20.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Smokey Eyeshadow">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="eyes">
+                <img src="brett-jordan-mPkTQZq9Ork-unsplash.jpg" alt="Liquid Eyeliner">
+                <h3>Liquid Eyeliner</h3>
+                <p>Precision, waterproof. £15.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Liquid Eyeliner">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="face">
+                <img src="diana-polekhina-SD4f7jBzWfE-unsplash.jpg" alt="Blush Compact">
+                <h3>Blush Compact</h3>
+                <p>Natural glow. £17.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Blush Compact">Add to Cart</button>
+            </div>
+            <div class="product-card" data-category="lips">
+                <img src="karolina-skiscim-mr2LC56r2Ds-unsplash.jpg" alt="Lip Balm">
+                <h3>Lip Balm</h3>
+                <p>Moisturizing, tinted. £12.00 (VAT incl.)</p>
+                <button class="add-to-cart" data-product="Lip Balm">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h2>Beauty Insights</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="animgraph-lab-Zkl2WM1mlqM-unsplash.jpg" alt="Autumn Makeup Trends">
+                <h3>Autumn Makeup Trends 2025</h3>
+                <p>Explore the bold colors and techniques defining this season’s looks.</p>
+                <a href="#" class="blog-link">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="gowtham-agm-I7N9a43ZPiA-unsplash.jpg" alt="Skincare Meets Makeup">
+                <h3>Skincare Meets Makeup</h3>
+                <p>Discover how our hydrating primers enhance your skin’s glow.</p>
+                <a href="#" class="blog-link">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="nguyen-phan-nam-anh-RKWkLh36EQ4-unsplash.jpg" alt="Perfect Smokey Eye">
+                <h3>Master the Perfect Smokey Eye</h3>
+                <p>Step-by-step guide to achieving a dramatic evening look.</p>
+                <a href="#" class="blog-link">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Luxe Beauty</h3>
+                <p>Premium cosmetics crafted in the UK. All prices include 20% VAT.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@luxebeauty.co.uk</p>
+                <p>Phone: +44 20 1234 5678</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">© 2025 Luxe Beauty. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
